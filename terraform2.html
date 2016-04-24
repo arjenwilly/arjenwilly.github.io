@@ -140,7 +140,7 @@
     }
   </code>
   </pre>
-  7. <b>Virtual Machine</b>
+  7. <b>Virtual Machine</b><br>
   Now create the virtual machine<br>
   <pre style="color: blue"># Create virtal machine and define image to install on VM 
   <code>
@@ -157,12 +157,12 @@
       sku = "7.1"
       version = "latest"
     }
-    <code>
-    <pre>
+    </code>
+    </pre>
     See <a href = "https://azure.microsoft.com/nl-nl/documentation/articles/virtual-machines-windows-sizes/">Azure site</a> for details about VM size pricing.
     <br>
     
-    8. <b>Assign created storage</b>
+    8. <b>Assign created storage</b><br>
     Assign OS disk and OS profile to virtual machine
     <pre style="color: blue"># Assign vhd blob storage and create a profile
     <code> 
@@ -182,7 +182,7 @@
     os_profile_linux_config {
     disable_password_authentication = false
     }
-    <code>
+    </code>
     </pre>
       </section>
 
