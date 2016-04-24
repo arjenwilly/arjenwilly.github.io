@@ -37,11 +37,11 @@
           <pre style="color: blue"># Configure the Azure Resource Manager Provider
           <code>
           provider "azurerm" {
-          subscription_id = "x-x-x-x-x"
-          client_id       = "x-x-x-x-x"
-          client_secret   = ""
-          tenant_id       = "x-x-x-x-x"
-        }
+            subscription_id = "x-x-x-x-x"
+            client_id       = "x-x-x-x-x"
+            client_secret   = ""
+            tenant_id       = "x-x-x-x-x"
+          }
         </code></pre>
         <br><br>
         2. <b>Resource group</b><br>
@@ -50,8 +50,8 @@
         <pre style="color: blue"># Make a reference to the created resource group
             <code>
             resource "azurerm_resource_group" "test" {
-            name = "test"
-            location = "West US"
+              name = "test"
+              location = "West US"
             }
           </code>
         </pre><br>
@@ -60,10 +60,10 @@
         1.<pre style="color: blue"># Make a virtual network
           <code>
             resource "azurerm_virtual_network" "test" {
-            name = "test"
-            address_space = ["10.0.0.0/16"]
-            location = "West US"
-            resource_group_name = "${azurerm_resource_group.test.name}"
+              name = "test"
+              address_space = ["10.0.0.0/16"]
+              location = "West US"
+              resource_group_name = "${azurerm_resource_group.test.name}"
             }
           </code>
           </pre>
@@ -71,10 +71,10 @@
            2.<pre style="color: blue"># Create subnet and refer to created azurerm_resource_group and azurerm_virtual_network
           <code>
             resource "azurerm_subnet" "test" {
-            name = "acctsub"
-            resource_group_name = "${azurerm_resource_group.test.name}"
-            virtual_network_name = "${azurerm_virtual_network.test.name}"
-            address_prefix = "10.0.2.0/24"
+              name = "acctsub"
+              resource_group_name = "${azurerm_resource_group.test.name}"
+              virtual_network_name = "${azurerm_virtual_network.test.name}"
+              address_prefix = "10.0.2.0/24"
             }
           </code>
         </pre>
@@ -83,15 +83,15 @@
         <pre style="color: blue"># Create 2nd eth card and tie it to the resource group
         <code>
         resource "azurerm_public_ip" "test" {
-        name = "acceptanceTestPublicIp1"
-        location = "West US"
-        resource_group_name = "${azurerm_resource_group.test.name}"
-        public_ip_address_allocation = "dynamic"
-
-        tags {
-        environment = "staging"
+          name = "acceptanceTestPublicIp1"
+          location = "West US"
+          resource_group_name = "${azurerm_resource_group.test.name}"
+          public_ip_address_allocation = "dynamic"
+  
+          tags {
+          environment = "staging"
+          }
         }
-      }
       </code>
       </pre>
       5. <b>Public IP Allocation</b><br>
@@ -99,9 +99,9 @@
       <pre style="color: blue"># Tie to resource group and connect public address ip ID to public ip interface
       <code>
       resource "azurerm_network_interface" "test" {
-      name = "acctni"
-      location = "West US"
-      resource_group_name = "${azurerm_resource_group.test.name}"
+        name = "acctni"
+        location = "West US"
+        resource_group_name = "${azurerm_resource_group.test.name}"
 
       ip_configuration {
           name = "testconfiguration1"
@@ -117,14 +117,14 @@
       <pre style="color: blue"># Add storage account
       <code>  
       resource "azurerm_storage_account" "test" {
-      name = "devops"
-      resource_group_name = "${azurerm_resource_group.test.name}"
-      location = "westus"
-      account_type = "Standard_LRS"
+        name = "devops"
+        resource_group_name = "${azurerm_resource_group.test.name}"
+        location = "westus"
+        account_type = "Standard_LRS"
     
-      tags {
-            environment = "staging"
-          }
+        tags {
+              environment = "staging"
+            }
       }
       </code>
       </pre>
