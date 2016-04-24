@@ -34,6 +34,12 @@
         
         1. <b>Provider</b>
         <br>All the details you retrieved are needed here.<br>
+        
+        ```ruby
+        require 'redcarpet'
+        markdown = Redcarpet.new("Hello World!")
+        puts markdown.to_html
+        ```
         ```ruby
         provider "azurerm" {
         subscription_id = "x-x-x-x-x"
