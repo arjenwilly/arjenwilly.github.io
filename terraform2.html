@@ -24,10 +24,26 @@
       </header>
       <section>
         <h3>Prerequisites</h3>
-        1. Install the terraform package. <br>
+        1. Create a local VM. I use Vagrant and Puppet to get my CentOS7 VM's running<br>
+        2. Install the terraform package. <br>
         <a href="https://www.terraform.io/downloads.html">https://www.terraform.io/downloads.html</a><br>
-        2. 
-      
+        <br>
+        
+        <h3>Cookbook</h3><br>
+        The terraform configuration file (main.tf) has different components. I will explain them step by step.<br>
+        
+        1. <b>Provider</b>
+        <br>All the details you retrieved are needed here.<br>
+        ```ruby
+        provider "azurerm" {
+        subscription_id = "x-x-x-x-x"
+        client_id       = "x-x-x-x-x"
+        client_secret   = "hash"
+        tenant_id       = "x-x-x-x-`x"
+        }
+        ```
+        <br>
+        
       
       </section>
 
