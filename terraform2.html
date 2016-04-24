@@ -81,6 +81,7 @@
         4. <b>Second network card</b>
         We configure a additional network card, as we need to have the VM remotely accessible<br>
         <pre style="color: blue"># Create 2nd eth card, make IP static and tie it to the resource group
+        <code>
         resource "azurerm_public_ip" "test" {
         name = "acceptanceTestPublicIp1"
         location = "West US"
@@ -93,6 +94,7 @@
       }
       </code>
       </pre>
+      
       
         
         
