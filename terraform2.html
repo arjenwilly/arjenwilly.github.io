@@ -114,7 +114,7 @@
       </pre>
       6. <b>Storage</b><br>
       Assign storage to your resources
-      <pre style="color: blue"># Add storage account and container
+      <pre style="color: blue"># Add storage account
       <code>  
       resource "azurerm_storage_account" "test" {
       name = "devops"
@@ -128,8 +128,8 @@
       }
       </code>
       </pre>
-      <br>
       See <a href = "https://azure.microsoft.com/nl-nl/pricing/details/storage/">https://azure.microsoft.com/nl-nl/pricing/details/storage/</a> for details about storage pricing.<br>
+    <br>
     <pre style="color: blue"># Add storage container 
     <code>
     resource "azurerm_storage_container" "test" {
