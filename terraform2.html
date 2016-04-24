@@ -63,16 +63,22 @@
             name = "test"
             address_space = ["10.0.0.0/16"]
             location = "West US"
+            
             #reference to created azurerm_resource_group
+            
             resource_group_name = "${azurerm_resource_group.test.name}"
             
             }
 
             resource "azurerm_subnet" "test" {
             name = "acctsub"
+            
             #reference to created azurerm_resource_group
+            
             resource_group_name = "${azurerm_resource_group.test.name}"
+            
             #reference to created azurerm_virtual_network
+            
             virtual_network_name = "${azurerm_virtual_network.test.name}"
             address_prefix = "10.0.2.0/24"
             }
