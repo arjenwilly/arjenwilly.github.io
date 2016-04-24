@@ -110,6 +110,8 @@
           public_ip_address_id = "${azurerm_public_ip.test.id}"
           }
       }
+      </code>
+      </pre>
       6. <b>Storage</b><br>
       Assign storage to your resources
       <pre style="color: blue"># Add storage account and container
@@ -124,11 +126,12 @@
             environment = "staging"
           }
       }
-      <br>
-      See <a href = "https://azure.microsoft.com/nl-nl/pricing/details/storage/">https://azure.microsoft.com/nl-nl/pricing/details/storage/</a> for details about storage pricing.<br>
       </code>
       </pre>
+      <br>
+      See <a href = "https://azure.microsoft.com/nl-nl/pricing/details/storage/">https://azure.microsoft.com/nl-nl/pricing/details/storage/</a> for details about storage pricing.<br>
     <pre style="color: blue"># Add storage container 
+    <code>
     resource "azurerm_storage_container" "test" {
         name = "vhds"
         resource_group_name = "${azurerm_resource_group.test.name}"
