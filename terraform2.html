@@ -57,7 +57,7 @@
         </pre><br>
         3. <b>Network components</b><br>
         You need to specify a internal network and a subnet. It is useful to create a seperate network file(network.tf) in your directory structure. This makes your code easily readable and prevents making configuration errors.<br>
-        1.<pre style="color: blue">#Make a virtual network
+        1.<pre style="color: blue"># Make a virtual network
           <code>
             resource "azurerm_virtual_network" "test" {
             name = "test"
@@ -68,7 +68,7 @@
           </code>
           </pre>
            <br>
-           2.<pre style="color: blue">#Create subnet and refer to created azurerm_resource_group and azurerm_virtual_network
+           2.<pre style="color: blue"># Create subnet and refer to created azurerm_resource_group and azurerm_virtual_network
           <code>
             resource "azurerm_subnet" "test" {
             name = "acctsub"
