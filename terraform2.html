@@ -166,21 +166,22 @@
     Assign OS disk and OS profile within your virtual machine code block
     <pre style="color: blue"># Assign vhd blob storage and create a profile
     <code> 
-     storage_os_disk {
-        name = "myosdisk1"
-        vhd_uri = "${azurerm_storage_account.test.primary_blob_endpoint}${azurerm_storage_container.test.name}/myosdisk1.vhd"
-        caching = "ReadWrite"
-        create_option = "FromImage"
-    }
-
-    os_profile {
-    computer_name = ""
-    admin_username = ""
-    admin_password = ""
-    }
-
-    os_profile_linux_config {
-    disable_password_authentication = false
+       storage_os_disk {
+          name = "myosdisk1"
+          vhd_uri = "${azurerm_storage_account.test.primary_blob_endpoint}${azurerm_storage_container.test.name}/myosdisk1.vhd"
+          caching = "ReadWrite"
+          create_option = "FromImage"
+      }
+  
+      os_profile {
+        computer_name = ""
+        admin_username = ""
+        admin_password = ""
+      }
+  
+      os_profile_linux_config {
+        disable_password_authentication = false
+      }
     }
     </code>
     </pre>
