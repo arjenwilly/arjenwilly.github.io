@@ -34,8 +34,7 @@
         
         1. <b>Provider</b>
         <br>All the details you retrieved are needed here.<br>
-          <pre style="color: blue">
-          # Configure the Azure Resource Manager Provider
+          <pre style="color: blue"># Configure the Azure Resource Manager Provider
           <code>
           provider "azurerm" {
           subscription_id = "x-x-x-x-x"
@@ -48,8 +47,7 @@
         2. <b>Resource group</b><br>
         Now create a resource group and provide a datacenter location. The location is important, because available VM's depend on the specific location(at least for now)
         <br>
-        <pre style="color: blue">
-            # Make a reference to the created resource group
+        <pre style="color: blue"># Make a reference to the created resource group
             <code>
             resource "azurerm_resource_group" "test" {
             name = "test"
